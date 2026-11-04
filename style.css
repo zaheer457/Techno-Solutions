@@ -294,3 +294,36 @@ main {
     }
 }
 
+/* FIX: AMBIENT BACKGROUND MOBILE OVERFLOW */
+
+@media (max-width: 800px) {
+
+    .ambient-one {
+        width: min(300px, 80vw);
+        height: min(300px, 80vw);
+        right: 0;
+        left: auto;
+    }
+
+    .ambient-two {
+        width: min(280px, 75vw);
+        height: min(280px, 75vw);
+        left: -120px;
+    }
+
+}
+
+@media (max-width: 560px) {
+
+    .ambient-one {
+        right: 0;
+        width: 280px;
+        height: 280px;
+    }
+
+    .ambient-two {
+        left: -120px;
+    }
+
+}
+
