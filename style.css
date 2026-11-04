@@ -316,3 +316,19 @@ section {
         padding-inline: 14px;
     }
 }
+
+/* Mobile navbar full width fix */
+@media (max-width: 800px) {
+    .site-header {
+        width: 100%;
+        max-width: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    .site-header .nav-wrap {
+        width: calc(100% - 40px);
+        max-width: 100%;
+        margin-inline: auto;
+    }
+}
