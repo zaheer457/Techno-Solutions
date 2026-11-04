@@ -134,82 +134,61 @@ img { max-width: 100%; height: auto; }
 }
 
 
+
 /* ==========================================
-   FINAL MOBILE RESPONSIVENESS FIX
+   CLEAN MOBILE RESPONSIVENESS FIX
    ========================================== */
 
-html,
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
 body {
     width: 100%;
     max-width: 100%;
     overflow-x: clip;
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-img,
-video,
-iframe {
+img, video, iframe {
     max-width: 100%;
 }
 
-main,
-header,
-footer,
-section {
+main {
     width: 100%;
     max-width: 100%;
+    min-width: 0;
 }
 
-.container,
-.hero-grid,
-.about-grid,
-.process-grid,
-.contact-shell {
+.container {
     min-width: 0;
     max-width: 100%;
-}
-
-.hero-grid > *,
-.about-grid > *,
-.process-grid > *,
-.contact-shell > * {
-    min-width: 0;
 }
 
 @media (max-width: 800px) {
 
-    .hero-grid {
-        grid-template-columns: minmax(0, 1fr);
-        width: 100%;
-    }
-
+    .hero-grid,
     .about-grid,
     .process-grid,
     .contact-shell {
+        width: 100%;
+        min-width: 0;
         grid-template-columns: minmax(0, 1fr);
     }
 
-    .hero-content,
-    .about-content,
-    .contact-intro,
-    .contact-form {
-        width: 100%;
+    .hero-grid > *,
+    .about-grid > *,
+    .process-grid > *,
+    .contact-shell > * {
         min-width: 0;
+        max-width: 100%;
     }
 
     .hero-visual {
-        width: min(100%, 520px);
+        width: min(90%, 520px);
         max-width: 100%;
-        margin-inline: auto;
-    }
-
-    .floating-card {
-        max-width: calc(100% - 8px);
+        margin: 0 auto;
     }
 
     .floating-card-top {
@@ -225,13 +204,10 @@ section {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .section-heading {
+    .contact-form,
+    .contact-intro {
+        width: 100%;
         min-width: 0;
-    }
-
-    .service-tags,
-    .footer-links {
-        flex-wrap: wrap;
     }
 }
 
@@ -249,7 +225,7 @@ section {
     .hero h1 {
         font-size: clamp(35px, 9.5vw, 48px);
         letter-spacing: -2px;
-        overflow-wrap: break-word;
+        overflow-wrap: anywhere;
     }
 
     .hero-actions {
@@ -258,8 +234,12 @@ section {
     }
 
     .hero-visual {
-        width: calc(100% - 16px);
-        max-width: 100%;
+        width: calc(100% - 20px);
+        height: 350px;
+    }
+
+    .floating-card {
+        max-width: calc(100% - 4px);
     }
 
     .service-grid,
@@ -267,12 +247,12 @@ section {
         grid-template-columns: minmax(0, 1fr);
     }
 
-    .contact-shell {
-        padding: 25px 16px;
-    }
-
     .form-row {
         grid-template-columns: minmax(0, 1fr);
+    }
+
+    .contact-shell {
+        padding: 25px 16px;
     }
 
     .contact-form input,
@@ -282,13 +262,13 @@ section {
         min-width: 0;
     }
 
-    .hero-bottom {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
     .footer-top,
     .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-links {
         flex-wrap: wrap;
     }
 }
@@ -300,35 +280,17 @@ section {
         width: calc(100% - 28px);
     }
 
-    .logo {
-        font-size: 14px;
-    }
-
-    .menu-toggle {
-        flex-shrink: 0;
-    }
-
     .hero-visual {
-        width: calc(100% - 20px);
+        width: calc(100% - 14px);
+        height: 310px;
     }
 
     .contact-shell {
-        padding-inline: 14px;
+        padding: 23px 15px;
+    }
+
+    .logo {
+        font-size: 14px;
     }
 }
 
-/* Mobile navbar full width fix */
-@media (max-width: 800px) {
-    .site-header {
-        width: 100%;
-        max-width: 100%;
-        left: 0;
-        right: 0;
-    }
-
-    .site-header .nav-wrap {
-        width: calc(100% - 40px);
-        max-width: 100%;
-        margin-inline: auto;
-    }
-}
